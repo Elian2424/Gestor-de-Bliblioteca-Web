@@ -1,0 +1,28 @@
+<main class="container">
+    <h2>Seguro que quiere Eliminar</h2>
+    <br>
+    <br>
+    <form action="/Editoriales/delete" method="post">
+
+
+        <div class="card" style="width: 18rem;">
+            <img width="100px" height="100px" src="/Assets/img/editorial.png"
+                style="margin-left: 70px;" alt="">
+            <div class="card-body">
+                <h5 class="card-text">{{editorial.nombre}}</h5>
+                <h6 class="card-text">{{editorial.telefono}} </h6>
+                <h6 class="card-text">{{editorial.pais}} </h6>
+
+            </div>
+
+
+
+
+
+            <input type="hidden" name="editorialId" value="{{editorial.id}}" />
+            <button class="btn btn-danger">Confirmar</button>
+    </form>
+
+
+
+</main>

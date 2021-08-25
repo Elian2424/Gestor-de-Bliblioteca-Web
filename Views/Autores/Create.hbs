@@ -1,0 +1,48 @@
+<main class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-header bg-dark text-light">{{#if editMode}}Editar Datos de Autor {{else}}Registrar
+                    Nuevo Autor{{/if}}
+
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{#if editMode}}/Autores/edit{{else}}/Autores/Create{{/if}}">
+                        <br>
+                        <img width="96px" height="96px" src="/Assets/img/pngkey.com-books-icon-png-8773087.png" style="margin-left: 110px;" alt="">
+                        <br>
+                        <br>
+
+                        <div class="mb-3">
+                            <label for="Nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="Nombre" name="nombre"
+                                value="{{#if editMode}}{{Autor.Nombre}}{{/if}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="Correo" class="form-label">Correo</label>
+                            <input type="Email" class="form-control" id="Correo" name="correo"
+                                value="{{#if editMode}}{{Autor.Correo}}{{/if}}">
+                        </div>
+
+
+                        {{#if editMode}}
+
+                        <input type="hidden" name="autorId" value="{{Autor.id}}">
+
+                        {{/if}}
+
+                        <button type="submit" class="btn btn-primary" style="margin-left: 120px;">
+                            {{#if editMode}}Actualizar{{else}}Registrar{{/if}}</button>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>

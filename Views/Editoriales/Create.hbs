@@ -1,0 +1,55 @@
+<main class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-header bg-dark text-light">{{#if editMode}}Editar Editorial {{else}}Registrar Nueva
+                    Editorial{{/if}}
+
+                </div>
+                <div class="card-body">
+                    <form method="POST"action="{{#if editMode}}/Editoriales/edit{{else}}/Editoriales/Create{{/if}}">
+
+                        <br>
+                        <img width="96px" height="96px" style=" margin-left:110px;"
+                            src="/Assets/img/editorial.png" alt="">
+                        <br>
+                        <br>
+                        <div class="mb-3">
+                            <label for="Nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="Nombre" name="nombre"
+                                value="{{#if editMode}}{{editorial.nombre}}{{/if}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="Telefono" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="Telefono" name="telefono"
+                                value="{{#if editMode}}{{editorial.telefono}}{{/if}}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Pais" class="form-label">Pais</label>
+                            <input type="text" class="form-control" id="Pais" name="pais"
+                                value="{{#if editMode}}{{editorial.pais}}{{/if}}">
+                        </div>
+
+
+                        {{#if editMode}}
+
+                        <input type="hidden" name="editorialId" value="{{editorial.id}}">
+
+                        {{/if}}
+
+                        <button type="submit" class="btn btn-primary" style="margin-left: 120px;">
+                            {{#if editMode}}Actualizar{{else}}Registrar{{/if}}</button>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>

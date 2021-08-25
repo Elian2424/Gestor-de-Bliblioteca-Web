@@ -1,0 +1,35 @@
+<main class="container">
+
+  {{#if contautores}}
+  <h1>Lista de Autores</h1>
+  <br>
+
+  <div class="row">
+
+    {{#each autores as |autoress|}}
+
+
+
+    <div class="card" style="width: 18rem; margin-left:30px;">
+      <img width="100px" height="100px" src="/Assets/img/pngkey.com-books-icon-png-8773087.png"
+        style="margin-left: 70px;" alt="">
+      <div class="card-body">
+        <h5 class="card-text">{{autoress.Nombre}}</h5>
+        <h6 class="card-text">{{autoress.Correo}} </h6>
+        <a href="edit/{{autoress.id}}?edit=true" class="btn btn-primary">Editar</a> | <a href="delete/{{autoress.id}}"
+          class="btn btn-danger">Borrar</a></td>
+      </div>
+
+    </div>
+
+
+    {{/each}}
+    {{else}}
+
+    <h1>No hay Registros </h1>
+
+    {{/if}}
+  </div>
+  </div>
+  </div>
+</main>

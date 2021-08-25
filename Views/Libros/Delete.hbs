@@ -1,0 +1,29 @@
+<main class="container">
+<h2>Seguro que quiere Eliminar</h2>
+<br>
+<br>
+    <form action="/Libros/delete" method="post">
+
+
+        <div class="card" style="width: 18rem;">
+                        <img src="/Assets/img/icons8-book-96.png"  alt="">
+                        <div class="card-body">
+                            <h5 class="card-text">{{Libro.Nombre}}</h5>
+                            <h6 class="card-text">{{Libro.autor}} - {{Libro.año}}</h6>
+                            <h6 class="card-text">{{Libro.editorial}}</h6>
+                             
+                    
+                            
+                        </div>
+
+
+       
+
+        
+        <input type="hidden" name="libroId" value="{{Libro.id}}" />
+        <button class="btn btn-danger">Confirmar</button>
+    </form>
+
+
+
+</main>

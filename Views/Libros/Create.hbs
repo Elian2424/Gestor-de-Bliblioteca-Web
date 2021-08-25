@@ -1,0 +1,72 @@
+<main class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-header bg-dark text-light">{{#if editMode}}Editar Libro  {{else}}Registrar Nuevo Libro{{/if}}
+                
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{#if editMode}}/Libros/edit{{else}}/Libros/Create{{/if}}">
+                        <br>
+            <img src="/Assets/img/icons8-book-96.png" style="margin-left:110px ;" alt="">
+            <br>
+            <br>
+
+                    <div class="mb-3">
+                        <label for="Nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="Nombre" name="nombre"
+                            value="{{#if editMode}}{{Libro.Nombre}}{{/if}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Año" class="form-label">Año</label>
+                        <input type="text" class="form-control" id="Año" name="año"
+                            value="{{#if editMode}}{{Libro.año}}{{/if}}">
+                    </div>
+                    <label for="Autor" class="form-label">Autor  </label>
+                    <select class="form-control" name="autor" id="Autor">
+                        <option >Seleccione un autor</option>
+                        {{#each listaA as |autorr|}}
+                        <option>{{autorr.Nombre}}</option>
+                        {{/each}}
+                    </select>
+                     <label for="Editorial" class="form-label">Editorial  </label>
+                    <select class="form-control" name="editorial" id="Editorial">
+                        <option >Seleccione una Editorial</option>
+                        {{#each listaE as |editoriall|}}
+                        <option>{{editoriall.nombre}}</option>
+                        {{/each}}
+                    </select>
+                    <br>
+
+                    {{#if editMode}}
+
+                    <input type="hidden" name="libroId" value="{{Libro.id}}">
+
+                    {{/if}}
+
+                    
+                        {{#if contA}}
+                            {{#if contE}}
+                                <button type="submit" class="btn btn-primary " style="margin-left: 120px;"disa >
+                                {{#if editMode}}Actualizar{{else}}Registrar{{/if}}</button>
+                            {{else}}
+                                <button type="submit" class="btn btn-primary disabled " style="margin-left: 120px;">
+                            {{#if editMode}}Actualizar{{else}}Registrar{{/if}}</button>
+                            {{/if}}    
+                        {{else}}
+                            <button type="submit" class="btn btn-primary disabled" style="margin-left: 120px;" >
+                            {{#if editMode}}Actualizar{{else}}Registrar{{/if}}</button>
+                        {{/if}}
+
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+</main>

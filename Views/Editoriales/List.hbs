@@ -1,0 +1,36 @@
+<main class="container">
+
+  {{#if contedit}}
+  <h1>Lista de Editoriales</h1>
+  <br>
+
+  <div class="row">
+
+    {{#each editorial as |editorial|}}
+
+
+
+    <div class="card" style="width: 18rem; margin-left:30px;">
+      <img width="100px" height="100px" src="/Assets/img/editorial.png"
+        style="margin-left: 70px;" alt="">
+      <div class="card-body">
+        <h5 class="card-text">{{editorial.nombre}}</h5>
+        <h6 class="card-text">{{editorial.telefono}} </h6>
+        <h6 class="card-text">{{editorial.pais}} </h6>
+        <a href="edit/{{editorial.id}}?edit=true" class="btn btn-primary">Editar</a> | <a href="delete/{{editorial.id}}"
+          class="btn btn-danger">Borrar</a></td>
+      </div>
+
+    </div>
+
+
+    {{/each}}
+    {{else}}
+
+    <h1>No hay Registros </h1>
+
+    {{/if}}
+  </div>
+  </div>
+  </div>
+</main>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="/Assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/Assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <img src="/Assets/img/icons8-books-emoji-48.png" alt="Incono">
+      <a class="navbar-brand" href="/"> InfoBooks</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link {{#if HomeActive}} active {{/if}}" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{#if LibrosActive}} active {{/if}}" href="/Libros/Menu">Libros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{#if autorActive}} active {{/if}}" href="/Autores/Menu">Autores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{#if EditorialActive}} active {{/if}}" href="/Editoriales/Menu">Editoriales</a>
+          </li>
+        </ul>
+        
+       
+      </div>
+    </div>
+  </nav>
+
+  {{{body}}}
+</body>
+</html>

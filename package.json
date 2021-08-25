@@ -1,0 +1,27 @@
+{
+  "name": "bliblioteca-node",
+  "version": "1.0.0",
+  "description": "Geestor de Bliblioteca",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elian2424/Gestor-de-Bliblioteca-Web.git"
+  },
+  "author": "Ramfis Elian Perez Mendez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elian2424/Gestor-de-Bliblioteca-Web/issues"
+  },
+  "homepage": "https://github.com/Elian2424/Gestor-de-Bliblioteca-Web#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "mysql2": "^2.3.0",
+    "nodemon": "^2.0.12",
+    "sequelize": "^6.6.5"
+  }
+}

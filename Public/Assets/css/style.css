@@ -1,0 +1,24 @@
+body{
+    background-color:rgb(20, 18, 29);
+    font-style: italic;
+    color: white;
+}
+label{
+    color: black;
+}
+
+main{
+    margin-top: 70px;
+    
+}
+th,td{
+    color: white;
+}
+
+h6{
+    color: black;
+}
+h5{
+    color: black;
+}
+

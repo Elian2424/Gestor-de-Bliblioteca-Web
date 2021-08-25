@@ -1,0 +1,27 @@
+<main class="container">
+<h2>Seguro que quiere Eliminar</h2>
+<br>
+<br>
+    <form action="/Autores/delete" method="post">
+
+
+        <div class="card" style="width: 18rem;">
+                        <img width="100px" height="100px" src="/Assets/img/pngkey.com-books-icon-png-8773087.png"
+        style="margin-left: 70px;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-text">{{Autor.Nombre}}</h5>
+                            <h6 class="card-text">{{Autor.Correo}}</h6>
+                        
+                        </div>
+
+
+       
+
+        
+        <input type="hidden" name="autorId" value="{{Autor.id}}" />
+        <button class="btn btn-danger">Confirmar</button>
+    </form>
+
+
+
+</main>

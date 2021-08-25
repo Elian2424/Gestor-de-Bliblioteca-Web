@@ -1,0 +1,37 @@
+<main class="container">
+
+    {{#if hasproduct}}
+    <h1>Biblioteca</h1>
+    <br>
+    
+
+
+    
+                
+                    <div class="row">
+
+                    {{#each prods}}
+                        
+
+                        
+                        <div class="card" style="width: 18rem;">
+                        <img width="200px" height="300px" src="{{this.imgUrl}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.title}}</h5>
+                            <h6 class="card-text">{{this.genero}}</h6>
+                            <p class="card-text">{{this.descripcion}}</p>
+                    </div>
+                            
+                        </div>
+                    
+                    
+                    {{/each}}
+                    {{else}}
+
+                    <h1>No hay Libros Aun </h1>
+
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+</main>
