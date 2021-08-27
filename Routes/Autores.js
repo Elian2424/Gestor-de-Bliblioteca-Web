@@ -5,17 +5,19 @@ const router = express.Router();
 
 const autorcontroller = require("../Controllers/AutorController");
 
-router.get("/Menu",autorcontroller.GetMenu);
+const isAuthenticated = require("../middleware/isAuthenticated");
 
-router.get("/Create",autorcontroller.GetAddAutor);
+router.get("/Menu",isAuthenticated,autorcontroller.GetMenu);
+
+router.get("/Create",isAuthenticated,autorcontroller.GetAddAutor);
 router.post("/Create", autorcontroller.PostAddAutor);
 
-router.get("/edit/:autorId", autorcontroller.GetEditAutor);
-router.post("/edit", autorcontroller.PostEditAutor);
+router.get("/edit/:autorId",isAuthenticated, autorcontroller.GetEditAutor);
+router.post("/edit",isAuthenticated,autorcontroller.PostEditAutor);
 
-router.get("/List",autorcontroller.GetAutorList);
+router.get("/List",isAuthenticated,autorcontroller.GetAutorList);
 
-router.get("/delete/:autorId",autorcontroller.GetDeleteAutor);
-router.post("/delete",autorcontroller.DeleteConfirm);
+router.get("/delete/:autorId",isAuthenticated,autorcontroller.GetDeleteAutor);
+router.post("/delete",isAuthenticated,autorcontroller.DeleteConfirm);
 
 module.exports = router;

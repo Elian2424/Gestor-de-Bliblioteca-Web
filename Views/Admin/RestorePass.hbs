@@ -1,0 +1,27 @@
+<main class="form-signin">
+
+    <form method="POST" action="/Admin/RestorePass">
+
+            <img class="mb-4" src="/Assets/img/Adm.jpg" alt="" width="120px" height="100px" style="margin-left: 90px;">
+            <h1 class="title h3 mb-3 fw-normal">Olvide mi Contraseña</h1>
+            <p>Se le enviara un codigo de verificacion a su correo para verficar que usted sea el propietario de la
+                cuenta. </p>
+        <div class="form-floating">
+                  
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="correo">
+            <label for="floatingInput">Ingrese su Correo </label>
+            <span class="text-danger">{{Message}}</span>
+            <br>
+            <br>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit" {{#if visible}} hidden {{/if}}>Enviar
+                codigo</button>
+            <br>
+        </div>
+
+    </form>
+</main>
+
+
+
+

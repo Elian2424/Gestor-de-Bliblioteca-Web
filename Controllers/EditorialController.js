@@ -90,6 +90,7 @@ exports.GetEditorialList = (req,res,next) =>{
         EditorialActive:true ,
         editorial: Editorial,
         contedit: Editorial.length > 0 ,
+        
         });
     }).catch(err =>{
         console.log(err);

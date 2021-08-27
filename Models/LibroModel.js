@@ -28,7 +28,10 @@ const Libro = sequelize.define(
             type: Sequelize.STRING,
             allowNull: true,
         },
-
+        ImagePath:{
+            type: Sequelize.STRING,
+            allowNull: true,
+        }
 
     }
 );

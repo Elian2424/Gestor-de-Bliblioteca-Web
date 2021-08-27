@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{pageTitle}}</title>
-    <link rel="stylesheet" href="/Assets/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/Assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pageTitle}}</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel-rtl/">
+  <link rel="stylesheet" href="/Assets/css/bootstrap/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/Assets/css/style.css">
+
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary  mb-4">
     <div class="container-fluid">
       <img src="/Assets/img/icons8-books-emoji-48.png" alt="Incono">
       <a class="navbar-brand" href="/"> InfoBooks</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
             <a class="nav-link {{#if HomeActive}} active {{/if}}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{#if LibrosActive}} active {{/if}}" href="/Libros/Menu">Libros</a>
+            <a class="nav-link {{#if LibrosActive}} active {{/if}}" href="{{#if isAuthenticated }}/Libros/Menu{{else}}/Libros/List{{/if}}">Libros</a>
           </li>
+          {{#if isAuthenticated }}
+          
           <li class="nav-item">
             <a class="nav-link {{#if autorActive}} active {{/if}}" href="/Autores/Menu">Autores</a>
           </li>
@@ -31,12 +57,53 @@
             <a class="nav-link {{#if EditorialActive}} active {{/if}}" href="/Editoriales/Menu">Editoriales</a>
           </li>
         </ul>
-        
-       
+        {{/if}}
+        <div class="d-flex" style="margin-left: {{#if isAuthenticated}}600px {{else}} 850px {{/if}};">
+
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+            {{#if isAuthenticated}}
+            <li class="nav-item">
+                <h7 class="nav-link active">Hola, {{correo}}</h7>
+            </li>
+
+            <li class="nav-item">
+              <form action="/Admin/Logout" method="POST">
+                <button class="btn btn-danger" type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#ffffff" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                    <path d="M7 12h14l-3 -3m0 6l3 -3" />
+                  </svg>
+                </button>
+              </form>
+            </li>
+
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/Admin/Login">Iniciar Sesion</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link {{#if signupActive}}active{{/if}}" aria-current="page"
+                href="/Admin/Create">Registrarse</a>
+            </li>
+
+            {{/if}}
+
+
+          </ul>
+
+        </div>
+
+
       </div>
     </div>
   </nav>
 
   {{{body}}}
 </body>
+
 </html>

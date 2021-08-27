@@ -14,9 +14,13 @@ const Autor = sequelize.define(
         },
         Nombre:{
             type: Sequelize.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         Correo:{
+            type: Sequelize.STRING,
+            allowNull: false,
+        },
+        ImagePath:{
             type: Sequelize.STRING,
             allowNull: true,
         }

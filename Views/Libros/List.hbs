@@ -1,35 +1,37 @@
-
-<main class="container">
+<main class="container main-admin">
 
     {{#if contL}}
-    <h1>Lista de libros</h1>
+    <h2>Lista de todos nuestros libros</h2>
     <br>
 
-                    <div class="row" >
+    <div class="row">
 
-                    {{#each Libro as |libross|}}
-                        
+        {{#each Libro as |libross|}}
 
-                        
-                        <div class="card" style="width: 18rem; margin-left:30px; ">
-                        <img src="/Assets/img/icons8-book-96.png" style="with:100px height:100px"  alt="">
-                        <div class="card-body">
-                            <h5 class="card-text">{{libross.Nombre}}</h5>
-                            <h6 class="card-text">{{libross.autor}} - {{libross.año}}</h6>
-                            <h6 class="card-text">{{libross.editorial}}</h6>
-                            <a href="edit/{{libross.id}}?edit=true" class="btn btn-primary">Editar</a> | <a href="delete/{{libross.id}}" class="btn btn-danger">Borrar</a></td>
-                    </div>
-                            
-                        </div>
-                    
-                    
-                    {{/each}}
-                    {{else}}
 
-                    <h1>No hay Productos </h1>
-
-                    {{/if}}
-                </div>
+        
+        <div class="card" style="width: 18rem; margin-left:30px; margin-top: 20px;">
+            <img src="{{libross.ImagePath}}" class="card-img-top img-size" alt="">
+            <div class="card-body ">
+                <h5 class="card-text">{{libross.Nombre}}</h5>
+                <h6 class="card-text">{{libross.autor}} - {{libross.año}}</h6>
+                <h6 class="card-text">{{libross.editorial}}</h6>
+                {{#if ../isAuthenticated}}
+                <a href="edit/{{libross.id}}?edit=true" class="btn btn-primary">Editar</a> | 
+                <a href="delete/{{libross.id}}" class="btn btn-danger">Borrar</a>
+                {{/if}}
             </div>
+
         </div>
+
+
+        {{/each}}
+        {{else}}
+
+        <h1>No hay Registros </h1>
+
+        {{/if}}
+    </div>
+    </div>
+    </div>
 </main>

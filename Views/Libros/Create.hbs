@@ -1,4 +1,4 @@
-<main class="container">
+<main class="container main-admin">
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
@@ -8,7 +8,7 @@
                 
             </div>
             <div class="card-body">
-                <form method="POST" action="{{#if editMode}}/Libros/edit{{else}}/Libros/Create{{/if}}">
+                <form enctype="multipart/form-data"  method="POST" action="{{#if editMode}}/Libros/edit{{else}}/Libros/Create{{/if}}">
                         <br>
             <img src="/Assets/img/icons8-book-96.png" style="margin-left:110px ;" alt="">
             <br>
@@ -38,6 +38,10 @@
                         <option>{{editoriall.nombre}}</option>
                         {{/each}}
                     </select>
+                    <div class="mb-3">
+                            <label for="IFormFile" class="form-label">Portada</label>
+                            <input class="form-control" type="file" id="IFormFile" name="imagen">
+                        </div>
                     <br>
 
                     {{#if editMode}}

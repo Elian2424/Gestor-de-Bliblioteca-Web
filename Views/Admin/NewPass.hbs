@@ -1,0 +1,36 @@
+<main class="container main-admin">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-header bg-dark text-light"> Cambie su Contraseña
+
+                </div>
+                <div class="card-body">
+                <form method="POST"action="/Admin/NewPass">
+
+                        <div class="mb-3">
+                            <label for="pass1" class="form-label">Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="pass1" name="Pass1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pass2" class="form-label">Confirmar Contraseña </label>
+                            <input type="password" class="form-control" id="pass2" name="Pass2">
+                        </div>
+
+
+
+
+                        <button type="submit" class="btn btn-primary" style="margin-left: 120px;">Actualizar</button>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>

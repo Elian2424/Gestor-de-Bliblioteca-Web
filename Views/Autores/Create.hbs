@@ -1,4 +1,4 @@
-<main class="container">
+<main class="container main-admin">
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
@@ -9,30 +9,38 @@
 
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{#if editMode}}/Autores/edit{{else}}/Autores/Create{{/if}}">
+                    <form enctype="multipart/form-data"  method="POST" action="{{#if editMode}}/Autores/edit{{else}}/Autores/Create{{/if}}">
                         <br>
-                        <img width="96px" height="96px" src="/Assets/img/pngkey.com-books-icon-png-8773087.png" style="margin-left: 110px;" alt="">
+                        <img width="96px" height="96px" src="/Assets/img/pngkey.com-books-icon-png-8773087.png"
+                            style="margin-left: 110px;" alt="">
                         <br>
                         <br>
 
                         <div class="mb-3">
                             <label for="Nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="Nombre" name="nombre"
-                                value="{{#if editMode}}{{Autor.Nombre}}{{/if}}">
+                                value="{{#if editMode}}{{Autor.Nombre}}{{/if}} {{Nombre}}">
+                                <span class="text-danger">{{MessageN}}</span>
                         </div>
                         <div class="mb-3">
                             <label for="Correo" class="form-label">Correo</label>
                             <input type="Email" class="form-control" id="Correo" name="correo"
-                                value="{{#if editMode}}{{Autor.Correo}}{{/if}}">
+                                value="{{#if editMode}}{{Autor.Correo}}{{/if}} {{Correo}}">
+                                <span class="text-danger">{{MessageC}}</span>
                         </div>
-
+                        <div class="mb-3">
+                            <label for="IFormFile" class="form-label">Foto de perfil</label>
+                            <input class="form-control" type="file" id="IFormFile" name="imagen">
+                        </div>
 
                         {{#if editMode}}
 
                         <input type="hidden" name="autorId" value="{{Autor.id}}">
 
                         {{/if}}
-
+                        <span class="text-danger">{{Message}}</span>
+                        <br>
+                        <br>
                         <button type="submit" class="btn btn-primary" style="margin-left: 120px;">
                             {{#if editMode}}Actualizar{{else}}Registrar{{/if}}</button>
 

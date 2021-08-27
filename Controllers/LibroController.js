@@ -41,12 +41,14 @@ exports.PostAddLibro = (req, res, next) => {
     const año = req.body.año;
     const autor = req.body.autor;
     const editorial = req.body.editorial;
+    const image = req.file;
 
     Libro.create({
         Nombre: nombre,
         año: año,
         autor: autor,
-        editorial: editorial
+        editorial: editorial,
+        ImagePath: "/" + image.path,
     }).then(result => {
         return res.redirect("/");
 

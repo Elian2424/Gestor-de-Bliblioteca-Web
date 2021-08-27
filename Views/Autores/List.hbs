@@ -1,4 +1,4 @@
-<main class="container">
+<main class="container main-admin">
 
   {{#if contautores}}
   <h1>Lista de Autores</h1>
@@ -8,11 +8,12 @@
 
     {{#each autores as |autoress|}}
 
+    <br>
+    <br>
 
-
-    <div class="card" style="width: 18rem; margin-left:30px;">
-      <img width="100px" height="100px" src="/Assets/img/pngkey.com-books-icon-png-8773087.png"
-        style="margin-left: 70px;" alt="">
+    <div class="card" style="width: 18rem; margin-left: 20px;  margin-top: 20px;">
+      <img class="card-img-top img-size" src="{{autoress.ImagePath}}"
+       alt="">
       <div class="card-body">
         <h5 class="card-text">{{autoress.Nombre}}</h5>
         <h6 class="card-text">{{autoress.Correo}} </h6>

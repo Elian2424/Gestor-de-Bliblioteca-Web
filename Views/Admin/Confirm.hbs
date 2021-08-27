@@ -1,0 +1,19 @@
+<main class="form-signin">
+    <form method="POST" action="/Admin/Verify" >
+        <img class="mb-4" src="/Assets/img/Adm.jpg" alt="" width="120px" height="100px" style="margin-left: 90px;">
+        <h1 class="title h3 mb-3 fw-normal">Olvide mi Contraseña</h1>
+        <p>Ingrese el codigo que le le enviamos al correo: {{correo}}  </p>
+
+        
+            <br>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Codigo" name="codigo" value="{{Code}}">
+            <label for="floatingPassword" >Codigo de verificacion</label>
+        </div>
+            <span class="text-danger">{{Message}}</span>
+            <br>
+            <br>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" >Verificar</button>
+
+    </form>
+</main>

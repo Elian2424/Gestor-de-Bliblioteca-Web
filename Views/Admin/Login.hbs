@@ -1,0 +1,36 @@
+<div class="back">
+
+    <a class="back-link" href="/">
+        <img src="/Assets/img/back.png" alt="" height="48px" width="48px">
+        Volver
+    </a>
+
+</div>
+<main class="form-signin">
+    <form method="POST" action="/Admin/Login">
+        <img class="mb-4" src="/Assets/img/Adm.jpg" alt="" width="120px" height="100px" style="margin-left: 90px;">
+        <h1 class="title h3 mb-3 fw-normal">Sesion Administrador</h1>
+
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="example2401" name="Correo" value="{{User}}">
+            <label for="floatingInput">Nombre de Usuario</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Pass" value="{{Pass}}">
+            <label for="floatingPassword">Contraseña</label>
+        </div>
+        <span class="text-danger">{{Message}}</span>
+        <br>
+        
+        <span><a href="/Admin/Create">No tienes una cuenta?</a></span>
+        <br>
+        <span><a href="/Admin/RestorePass">Olvide mi contraseña</a></span>
+        <br>
+        <br>
+
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesion</button>
+
+    </form>
+</main>

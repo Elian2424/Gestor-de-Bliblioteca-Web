@@ -1,0 +1,63 @@
+<main class="container main-admin">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-header bg-dark text-light">
+                    Registrar Nuevo Usuario
+
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/Admin/Create">
+                        <br>
+                        <img width="96px" height="96px" src="/Assets/img/pngkey.com-books-icon-png-8773087.png"
+                            style="margin-left: 110px;" alt="">
+                        <br>
+                        <br>
+
+                        <div class="mb-3">
+                            <label for="Nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="Nombre" name="nombre" value="{{Nombre}}">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Apellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="Nombre" name="apellido" value="{{Apellido}}">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Correo" class="form-label">Correo</label>
+                            <input type="Email" class="form-control" id="Correo" name="correo" value="{{Correo}}">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Usuario" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" id="Usuario" name="usuario" value="{{Usuario}}">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Contraseña" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="Contraseña" name="contraseña" value="{{Contraseña}}">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="Contraseña1" class="form-label">Confirme Contraseña</label>
+                            <input type="password" class="form-control" id="Contraseña1" name="contraseña1" value="{{Contraseña1}}">
+                            
+                        </div>
+                        <span class="text-danger">{{Message}}</span>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary" style="margin-left: 120px;">Registrar</button>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>
